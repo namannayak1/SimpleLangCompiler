@@ -138,4 +138,5 @@ ENDIF:
 
 ## Contact
 
-For any queries or suggestions, please reach out to [your email/contact info].
+For any queries or suggestions, please reach out to namannayak24@gmail.com
+
