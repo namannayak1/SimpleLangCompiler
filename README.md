@@ -80,9 +80,13 @@ The compiler accepts SimpleLang code files with constructs like:
 
 ```simplelang
 int a;
+int b;
+int c;
 a = 10;
-if (a == 10) {
-    a = a + 1;
+b = 20;
+c = a + b;
+if (c == 30) {
+    c = c + 1;
 }
 ```
 
@@ -103,18 +107,17 @@ The compiler reports syntax errors and undeclared variable usage.
 For the above SimpleLang code, the generated assembly might look like this:
 
 ```assembly
-LOAD 10
-STORE a
-LOAD a
-SUB 10
-JNZ ELSE
-LOAD a
-ADD 1
-STORE a
-JMP ENDIF
-ELSE:
-; No operation for else
-ENDIF:
+Variable declared: a
+Variable declared: b
+Variable declared: c
+Load number: 5
+Value stored in : a
+Load number: 3
+Value stored in: b
+Load variable: a
+Load variable: b
+Subtract operation
+Value stored in: c
 ```
 
 ## How It Works
